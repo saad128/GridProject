@@ -25,14 +25,11 @@ public class TargetSelected : MonoBehaviour
             if(Physics.Raycast(ray, out RaycastHit hitInfo))
             {
                 Debug.Log("raycast hit");
-                if(hitInfo.collider.gameObject != null)
+                if(hitInfo.collider.gameObject.CompareTag("Cells"))
                 {
                     Debug.Log("move player");
-                    //Vector3 distanceToTarget = hitInfo.point - transform.position;
-                    //Vector3 speedDirection = distanceToTarget.normalized;
-                    //playerRb.AddForce(speedDirection * speed, ForceMode.Impulse);
-
-                    transform.position = hitInfo.collider.gameObject.transform.position;
+                    var temp= hitInfo.collider.gameObject.GetComponent<TargetCell>().placeHolder;
+                    transform.position = temp.position;
                 }
             }
         }

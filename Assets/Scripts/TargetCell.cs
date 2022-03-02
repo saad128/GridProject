@@ -5,6 +5,7 @@ using UnityEngine;
 public class TargetCell : MonoBehaviour
 {
     private Renderer rendererCell;
+    public Transform placeHolder;
     // Start is called before the first frame update
     void Start()
     {

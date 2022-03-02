@@ -6,7 +6,7 @@ public class GameGrid : MonoBehaviour
 {
     public int height;
     public int width;
-    private float GridSpaceSize = -2f;
+    private float GridSpaceSize = 2f;
     private GameObject[,] gameGrid;
 
     [SerializeField] private GameObject gridCellPrefab;
@@ -36,6 +36,7 @@ public class GameGrid : MonoBehaviour
             {
                 // create a new GridSpace object for each cell
                 gameGrid[x, z] = Instantiate(gridCellPrefab, new Vector3(x * GridSpaceSize, 0, z * GridSpaceSize), Quaternion.identity);
+
                 //gameGrid[x, z].transform.parent = transform;
                 //gameGrid[x, z].transform.name = "Grid Space( X: " + x.ToString() + ", Y: " + z.ToString() + ")";
             }
